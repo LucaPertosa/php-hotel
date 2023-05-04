@@ -48,6 +48,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
-
+    <?php foreach($hotels as $key => $hotel) {?>
+        <div>
+            <h3> <?php echo $hotel['name'];?> </h3>
+            <p> <?php echo $hotel['description']?> </p>
+            <?php if ($hotel['parking']) { ?>
+                <p>La struttura <?php echo $hotel['name'];?> ha il parcheggio</p>
+            <?php } else { ?>
+                <p>La struttura <?php echo $hotel['name'];?> non ha il parcheggio</p>
+            <?php } ?>
+            <p>Voto medio: <?php echo $hotel['vote'];?></p>
+            <p>Distanza dal centro: <?php echo $hotel['distance_to_center'];?> km</p>
+        </div>
+    <?php }?>
 </body>
 </html>

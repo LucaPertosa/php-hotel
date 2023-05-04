@@ -41,6 +41,10 @@
             $hotels = array_filter($hotels, function($hotel) { 
                 return $hotel['parking'] == true; 
             }); 
+        } elseif($_GET['parking'] == "no") { 
+            $hotels = array_filter($hotels, function($hotel) { 
+                return $hotel['parking'] == false; 
+            }); 
         };
     };
     if(isset($_GET['vote'])) { 
@@ -69,7 +73,8 @@
                         <label for="parking">Filtro Parcheggio</label> 
                         <select class="form-control" id="parking" name="parking"> 
                             <option value="">Tutti</option>
-                            <option value="yes">Parcheggio Disponibile</option>
+                            <option value="yes">Struttura con parcheggio</option>
+                            <option value="no">Struttura senza parcheggio</option>
                         </select> 
                     </div> 
                 </div> 
